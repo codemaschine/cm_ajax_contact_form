@@ -1,0 +1,20 @@
+{namespace ajax=TYPO3\CmAjax\ViewHelpers}
+
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<h3><f:if condition="{messageTitle}"><f:then>{messageTitle}</f:then><f:else>Anfrage verschickt.</f:else></f:if></h3>
+<p>
+  <f:if condition="{message}">
+    <f:then>
+      {message}
+    </f:then>
+    <f:else>
+      {f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.success')}
+    </f:else>
+  </f:if>
+</p>
+
+</f:section>

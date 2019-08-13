@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+
+h1, h2 {
+	text-align: left;
+}
+
+p {
+	margin-bottom: 0.5em;
+}
+
+.ErrorExplanation {
+  border: 1px solid #FF0000;
+  padding: 5px;
+  margin: 10px 0;
+  background-color: #DADADA;
+  width: 300px;
+}
+
+ul.f3-widget-paginator li {
+	display: inline;
+}
+
+table.list {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #A2AAB8;
+    border-spacing: 0 0;
+    border-collapse: collapse;
+}
+
+table.list tr th {
+    background-color: #5B5B5B;
+    background-image: -moz-linear-gradient(center top , #7F7F7F 10%, #5B5B5B 100%);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    font-size: 10px;
+    height: 20px;
+    line-height: 19px;
+    padding: 1px 4px;
+    text-align: left;
+    color: #FFFFFF;
+    font-weight: bold;
+    white-space: nowrap;
+}
+    
+table.list tr th.datetime, table tr td.datetime {
+	white-space: nowrap;
+}
+
+table.list tr.unconfirmed td {
+    background-color: #ffe4da;
+}
+table.list tr.unconfirmed:nth-child(2n+1) td {
+    background-color: #f7ddd3;
+}
+
+
+
+table.list tr:nth-child(2n+1) td {
+    background-color: #F7F7F7;
+}
+
+table.list tr th, table tr td {
+    padding: 3px 1px 3px 6px;
+}
+
+
+
+
+body a {
+  text-decoration: underline;
+}
+
+.date {
+	white-space: nowrap;
+}
+
+
+.course_pic {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.pagination {
+	margin: 10px 0;
+}
+
+.sortable-link {
+	color: #e0e0e0;
+}
+
+.sortable-link.active, .sortable-link:hover, .sortable-link:visited {
+  color: #fff;
+}
+
+form .t3-icon-input-clear {
+	top: -3px;
+	right: 23px;
+}

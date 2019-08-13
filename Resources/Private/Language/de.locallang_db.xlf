@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-08-06T14:20:08Z" product-name="cm_ajax_contact_form">
+		<header/>
+		<body>
+			<!-- https://docs.typo3.org/m/typo3/reference-coreapi/8.7/en-us/Internationalization/Introduction/Index.html -->
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.ownPhone">
+				<source>Own telephone number (displayed above the form)</source>
+        <target>Eigene Telefonnummer (wird über dem Formular angezeigt)</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.ownEmail">
+				<source>Own e-mail address (displayed above the form)</source>
+        <target>Eigene E-Mail-Adresse (wird über dem Formular angezeigt)</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.textareaResizeable">
+				<source>Should the size of the text area be changeable?</source>
+        <target>Soll der Textbereich in der Größe veränderbar sein?</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.textareaAutoGrow">
+				<source>Should the text area automatically increase in size?</source>
+        <target>Soll der Textbereich automatisch größer werden?</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.textareaRows">
+				<source>Number of lines for the text area</source>
+        <target>Anzahl der Zeilen für den Textbereich</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.phoneActivated">
+				<source>Should the user also enter a telephone number?</source>
+        <target>Soll der User auch eine Telefonnummer angeben?</target>
+			</trans-unit>
+      <trans-unit id="tx_cmajaxcontactform_domain_model_contact.contactRequest">
+				<source>Contact request</source>
+        <target>Kontaktanfrage</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

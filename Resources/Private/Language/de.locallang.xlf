@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-08-06T14:20:08Z" product-name="cm_ajax_contact_form">
+		<header/>
+		<body>
+			<!-- https://docs.typo3.org/m/typo3/reference-coreapi/8.7/en-us/Internationalization/Introduction/Index.html -->
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact">
+				<source>Contact</source>
+        <target>Kontakt</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.contact_data">
+				<source>Contact Data</source>
+				<target>Kontaktdaten</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.contactData">
+				<source>Contact Data</source>
+				<target>Kontaktdaten</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.email">
+				<source>Email</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.phone">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.message">
+				<source>Message</source>
+				<target>Nachricht</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.name_placeholder">
+				<source>Your Name</source>
+				<target>Ihr Name</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.email_placeholder">
+				<source>Your Email</source>
+				<target>Ihre E-Mail-Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.contactData_placeholder">
+				<source>How can we contact you?</source>
+				<target>Wie wir Sie erreichen (E-Mail, Tel. o.Ä.)</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.message_placeholder">
+				<source>Your Message</source>
+				<target>Ihre Nachricht an uns</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.submit">
+				<source>Send</source>
+				<target>Senden</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.success">
+				<source>Thanks! We received your message and contact you as soon as possible!</source>
+				<target>Vielen Dank! Wir werden uns umgehend bei Ihnen melden.</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.error.contact_name">
+				<source>Please enter your name.</source>
+				<target>Bitte geben Sie Ihren Namen an.</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.error.contact">
+				<source>Please enter your email or phone number.</source>
+				<target>Bitte geben Sie Ihre E-Mail-Adresse oder Telefonnummer an.</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.error.contact_email">
+				<source>Your Email Address is invalid.</source>
+				<target>Die angegebene E-Mail-Adresse ist nicht gültig.</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.error.contact_message">
+				<source>Please enter a message.</source>
+				<target>Bitte geben Sie eine Nachricht ein.</target>
+			</trans-unit>
+			<trans-unit id="tx_cmajaxcontactform_domain_model_contact.date">
+				<source>Date (mm/dd/yyyy hh:mm)</source>
+				<target>Datum (dd.mm.yyyy hh:mm)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

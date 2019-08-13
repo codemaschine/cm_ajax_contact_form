@@ -1,0 +1,28 @@
+<f:form.validationResults for="{object}">
+  <f:if condition="{validationResults.flattenedErrors}">
+    <div class="error-explanations">
+      <h3>Bitte überprüfen Sie Ihre Eingaben!</h3>
+      
+      <f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+         
+         <ul>
+            <f:for each="{errors}" as="error">
+              <li>
+                  
+                <f:if condition="{f:translate(key: 'error.{error.code}')}">
+                  <f:then>
+                    <span class="property"><f:translate key="tx_cmcoursefinder_domain_model_{propertyPath}">{propertyPath}</f:translate></span>
+                    <f:translate key="error.{error.code}" arguments="{propertyError.arguments}" />
+                  </f:then>
+                  <f:else>
+                    <f:format.raw>{error}</f:format.raw>
+                  </f:else>
+                </f:if>
+              </li>
+            </f:for>
+          </ul>
+        
+      </f:for>
+    </div>
+</f:if>
+</f:form.validationResults>

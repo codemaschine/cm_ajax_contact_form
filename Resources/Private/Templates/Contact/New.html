@@ -1,0 +1,89 @@
+{namespace ajax=TYPO3\CmAjax\ViewHelpers}
+
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<f:if condition="{ownPhone} != ''">
+  <f:then>
+    <div class="contact_row contact_phone">
+      Tel.: {ownPhone}
+    </div>
+  </f:then>
+</f:if>
+
+<f:if condition="{ownPhone} != ''">
+  <f:then>
+    <div class="contact_row contact_email">
+      E-Mail: <f:link.email email="{ownEmail}">{ownEmail}</f:link.email>
+    </div>
+  </f:then>
+</f:if>
+
+<div class="errors">
+  <f:render partial="FormErrors" arguments="{object:Contact}" />
+</div>
+
+<div class="contact_row contact_form">
+  <ajax:form action="create"  name="contact" object="{contact}" update="#cm-ajax-contact-form-{ajax:contentUid()}"  error="#cm-ajax-contact-form-{ajax:contentUid()} .errors" loading="#cm-ajax-contact-form-{ajax:contentUid()} .contactSubmitLoader" onsubmit="return check_ajax_contact_form_{ajax:contentUid()}(this);">
+    <f:form.textfield class="contact_name required" property="name" placeholder="{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.name_placeholder')}" />
+    <f:form.textfield class="contact_email" property="email" placeholder="{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.email')}" />
+    <f:if condition="{phoneActivated}"><f:then><f:form.textfield class="contact_phone" property="phone" placeholder="{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.phone')}" /></f:then></f:if>
+    <f:form.textarea class="contact_message required{f:if(condition: '{textareaAutoGrow}', then: ' autoExpand')}{f:if(condition: '!{textareaResizeable}', then: ' notResizeable')}" property="message" cols="40" rows="{textareaRows}" placeholder="{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.message_placeholder')}" />
+    <div class="submit_wrap">
+      <f:image src="EXT:cm_ajax/Resources/Public/Images/ajax-loader.gif" class="contactSubmitLoader" style="display: none; width: auto; height: auto;" /><f:form.submit value="Nachricht abschicken" />
+    </div>
+  </ajax:form>
+</div>
+
+<f:if condition="!{textareaResizeable}">
+  <f:then>
+    <style>
+      .notResizeable {
+        resize: none;
+      }
+    </style>
+  </f:then>
+</f:if>
+
+<script>
+
+function check_ajax_contact_form_{ajax:contentUid()}() {
+
+  	var is_error = false;
+  	var errors = new Array();
+
+
+  	if (!$('#cm-ajax-contact-form-{ajax:contentUid()} input.contact_name').val())
+        errors.push("{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.error.contact_name')}");
+
+  	if (!$('#cm-ajax-contact-form-{ajax:contentUid()} input.contact_email').val() && !$('#cm-ajax-contact-form-{ajax:contentUid()} input.contact_phone').val())
+        errors.push("{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.error.contact')}");
+
+  	if ($('#cm-ajax-contact-form-{ajax:contentUid()} input.contact_email').val() && !$('#cm-ajax-contact-form-{ajax:contentUid()} input.contact_email').val().match(/^\S+@\S+\.\S+$/))
+  		errors.push("{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.error.contact_email')}");
+
+  	if (!$('#cm-ajax-contact-form-{ajax:contentUid()} textarea.contact_message').val())
+        errors.push("{f:translate(key: 'tx_cmajaxcontactform_domain_model_contact.error.contact_message')}");
+
+
+  	if (errors.length) {
+  		$("#cm-ajax-contact-form-{ajax:contentUid()} .errors").html("<div>" + errors.join('<br>') + "</div>");
+  		return false;
+  	}
+  	return true;
+	}
+  // Applied globally on all textareas with the "autoExpand" class
+  $(document).on('input.autoExpand', 'textarea.autoExpand', function() {
+    this.rows = {textareaRows};
+    var lht = parseInt($(this).css('lineHeight'),10);
+    var lines = this.scrollHeight / lht;
+    this.rows = lines;
+  });
+
+</script>
+
+</f:section>

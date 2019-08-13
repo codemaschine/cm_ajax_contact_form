@@ -1,0 +1,73 @@
+<T3DataStructure>
+  <meta>
+        <langDisable>1</langDisable>
+  </meta>
+      <ROOT>
+        <type>array</type>
+        <el>
+
+          <settings.ownPhone>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.ownPhone</label>
+              <config>
+                <type>input</type>
+                <size>40</size>
+              </config>
+            </TCEforms>
+          </settings.ownPhone>
+
+          <settings.ownEmail>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.ownEmail</label>
+              <config>
+                <type>input</type>
+                <size>40</size>
+              </config>
+            </TCEforms>
+          </settings.ownEmail>
+
+          <settings.textareaResizeable>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.textareaResizeable</label>
+              <config>
+                <type>check</type>
+                <default>true</default>
+              </config>
+            </TCEforms>
+          </settings.textareaResizeable>
+
+          <settings.textareaAutoGrow>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.textareaAutoGrow</label>
+              <config>
+                <type>check</type>
+                <default>false</default>
+              </config>
+            </TCEforms>
+          </settings.textareaAutoGrow>
+
+          <settings.textareaRows>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.textareaRows</label>
+              <config>
+                <type>input</type>
+                <size>2</size>
+                <default>3</default>
+              </config>
+            </TCEforms>
+          </settings.textareaRows>
+
+          <settings.phoneActivated>
+           	 <TCEforms>
+              <label>LLL:EXT:cm_ajax_contact_form/Resources/Private/Language/locallang_db.xlf:tx_cmajaxcontactform_domain_model_contact.phoneActivated</label>
+              <config>
+                <type>check</type>
+                <default>true</default>
+              </config>
+            </TCEforms>
+          </settings.phoneActivated>
+
+        </el>
+      </ROOT>
+
+</T3DataStructure>

@@ -1,0 +1,36 @@
+
+plugin.tx_cmajaxcontactform {
+	view {
+		# cat=plugin.tx_cmajaxcontactform/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:cm_ajax_contact_form/Resources/Private/Templates/
+		# cat=plugin.tx_cmajaxcontactform/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:cm_ajax_contact_form/Resources/Private/Partials/
+		# cat=plugin.tx_cmajaxcontactform/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:cm_ajax_contact_form/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Default storage PID
+		storagePid = 0
+	}
+	settings {
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Your Phone display above the form
+		ownPhone =
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Your Email display above the form
+		ownEmail =
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Your Email to deliver the contact requests
+		notifyEmail =
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Your Email Subject
+		notifyEmailSubject =
+	}
+}
+
+module.tx_cmajaxcontactform {
+	view {
+		# cat=module.tx_cmajaxcontactform/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:cm_ajax_contact_form/Resources/Private/Backend/Templates/
+		# cat=module.tx_cmajaxcontactform/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:cm_ajax_contact_form/Resources/Private/Backend/Partials/
+		# cat=module.tx_cmajaxcontactform/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:cm_ajax_contact_form/Resources/Private/Backend/Layouts/
+	}
+}
