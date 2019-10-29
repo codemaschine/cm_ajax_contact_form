@@ -21,6 +21,7 @@ plugin.tx_cmajaxcontactform {
 	  ownEmail = {$plugin.tx_cmajaxcontactform.settings.ownEmail}
 		notifyEmail = {$plugin.tx_cmajaxcontactform.settings.notifyEmail}
 		notifyEmailSubject = {$plugin.tx_cmajaxcontactform.settings.notifyEmailSubject}
+		from = {$plugin.tx_cmajaxcontactform.settings.from}
 	}
 
 }

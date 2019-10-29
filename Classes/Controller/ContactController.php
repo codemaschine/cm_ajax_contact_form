@@ -129,7 +129,10 @@ class ContactController extends \TYPO3\CmAjax\Controller\ApplicationController {
 		if ($this->settings['notifyEmailSubject'])
 		  $subject = $this->settings['notifyEmailSubject'];
 
-		$from = $contact->getEmail() ? $contact->getEmail() : 'noreply@'.$_SERVER['SERVER_NAME'];
+		  if ($this->settings['from'])
+		    $from = $this->settings['from'];
+		  else
+		    $from = $contact->getEmail() ? $contact->getEmail() : 'noreply@'.$_SERVER['SERVER_NAME'];
 
 		mb_language('en');
 

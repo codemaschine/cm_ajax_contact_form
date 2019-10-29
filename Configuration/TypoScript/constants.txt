@@ -21,6 +21,8 @@ plugin.tx_cmajaxcontactform {
 		notifyEmail =
 		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Your Email Subject
 		notifyEmailSubject =
+		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Set senders 'From'-Email to a static address instead of using the email address that was submitted by the user.
+        from =
 	}
 }
 
