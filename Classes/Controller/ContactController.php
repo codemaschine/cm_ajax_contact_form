@@ -136,11 +136,12 @@ class ContactController extends \TYPO3\CmAjax\Controller\ApplicationController {
   	  $arrResponse = json_decode($response, true);
   	  
   	  // verify the response
-  	  if($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= 0.5) {
+  	  if($arrResponse["success"] && $arrResponse["action"] == "submit" && $arrResponse["score"] >= 0.5) {
   	    GeneralUtility::devLog('Google Recaptcha: OK!', 'cm_ajax_contact_form');
   	    // valid submission
   	    // go ahead and do necessary stuff
   	  } else {
+            GeneralUtility::devLog('Error: '.var_export($response, true), 'cm_ajax_contact_form');
   	    $this->throwStatus(400, 'error', "Die Kontaktanfrage konnte leider nicht verschickt werden: Der SPAM-Schutz hat ihre Anfrage verweigert. Bitte verwenden Sie direkt per Telefon an uns. Vielen Dank.");
   	    return;
   	    // spam submission
