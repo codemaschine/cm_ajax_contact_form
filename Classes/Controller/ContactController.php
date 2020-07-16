@@ -2,6 +2,8 @@
 namespace CODEMASCHINE\CmAjaxContactForm\Controller;
 
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
  *
  *  Copyright notice
@@ -109,16 +111,43 @@ class ContactController extends \TYPO3\CmAjax\Controller\ApplicationController {
 		$this->view->assign('textareaRows', $this->settings['textareaRows']);
 		$this->view->assign('textareaResizeable', $this->settings['textareaResizeable']);
 		$this->view->assign('phoneActivated', $this->settings['phoneActivated']);
+		$this->view->assign('reCAPTCHA_site_key', $this->settings['reCAPTCHA_site_key']);
 	}
 
 	/**
 	 * action create
 	 *
 	 * @param \CODEMASCHINE\CmAjaxContactForm\Domain\Model\Contact $contact
+	 * @param string $token Google reCaptcha Token
 	 * @dontverifyrequesthash
 	 * @return void
 	 */
-	public function createAction(\CODEMASCHINE\CmAjaxContactForm\Domain\Model\Contact $contact) {
+	public function createAction(\CODEMASCHINE\CmAjaxContactForm\Domain\Model\Contact $contact, $token) {
+	  
+	  if ($this->settings['reCAPTCHA_secret_key']) {   // Using Google Recaptcha V3?
+  	  // call curl to POST request
+  	  $ch = curl_init();
+  	  curl_setopt($ch, CURLOPT_URL,"https://www.google.com/recaptcha/api/siteverify");
+  	  curl_setopt($ch, CURLOPT_POST, 1);
+  	  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => $this->settings['reCAPTCHA_secret_key'], 'response' => $token)));
+  	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  	  $response = curl_exec($ch);
+  	  curl_close($ch);
+  	  $arrResponse = json_decode($response, true);
+  	  
+  	  // verify the response
+  	  if($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= 0.5) {
+  	    GeneralUtility::devLog('Google Recaptcha: OK!', 'cm_ajax_contact_form');
+  	    // valid submission
+  	    // go ahead and do necessary stuff
+  	  } else {
+  	    $this->throwStatus(400, 'error', "Die Kontaktanfrage konnte leider nicht verschickt werden: Der SPAM-Schutz hat ihre Anfrage verweigert. Bitte verwenden Sie direkt per Telefon an uns. Vielen Dank.");
+  	    return;
+  	    // spam submission
+  	  }
+	  }
+	  
+	  
 	  $this->contactRepository->add($contact);
 		$to = 'jdinse@codemaschine.de';
 		if ($this->settings['notifyEmail'])

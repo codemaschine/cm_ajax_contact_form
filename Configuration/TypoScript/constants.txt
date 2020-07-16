@@ -23,6 +23,11 @@ plugin.tx_cmajaxcontactform {
 		notifyEmailSubject =
 		# cat=plugin.tx_cmajaxcontactform//a; type=string; label=Set senders 'From'-Email to a static address instead of using the email address that was submitted by the user.
         from =
+        
+        # cat=plugin.tx_cmajaxcontactform//a; type=string; label=Google recaptcha v3 website key
+        reCAPTCHA_site_key =
+        # cat=plugin.tx_cmajaxcontactform//a; type=string; label=Google recaptcha v3 secret key
+        reCAPTCHA_secret_key =
 	}
 }
 

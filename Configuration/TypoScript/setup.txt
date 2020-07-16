@@ -22,6 +22,8 @@ plugin.tx_cmajaxcontactform {
 		notifyEmail = {$plugin.tx_cmajaxcontactform.settings.notifyEmail}
 		notifyEmailSubject = {$plugin.tx_cmajaxcontactform.settings.notifyEmailSubject}
 		from = {$plugin.tx_cmajaxcontactform.settings.from}
+		reCAPTCHA_site_key = {$plugin.tx_cmajaxcontactform.settings.reCAPTCHA_site_key}
+		reCAPTCHA_secret_key = {$plugin.tx_cmajaxcontactform.settings.reCAPTCHA_secret_key}
 	}
 
 }
@@ -41,5 +43,9 @@ module.tx_cmajaxcontactform {
 	}
 }
 
+page.includeJSFooter {
+    grecaptchav3 = https://www.google.com/recaptcha/api.js?render={$plugin.tx_cmajaxcontactform.settings.reCAPTCHA_site_key}
+    external = 1
+}
 
 # page.includeCSS.cm_ajax_contact_form_styles = EXT:cm_ajax_contact_form/Resources/Public/Stylesheets/styles.css
